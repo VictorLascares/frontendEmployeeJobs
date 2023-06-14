@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-center">Cotizar</h2>
+    <form [formGroup]="checkoutForm"  novalidate (ngSubmit)="enviarCorreo(checkoutForm.value)">
+        <div class="d-flex flex-column align-items-center jusitfy">
+            <div class="my-2 w-50">
+                <label for="destinatario" class="text-white fw-bold fs-4">Correo Electronico</label>
+                <input type="email" class="form-control bg-dark text-white" id="destinatario" name="destinatario" formControlName="destinatario"
+                    placeholder="name@example.com">
+            </div>
+
+            <div class="my-2 w-50">
+                <label for="asunto" class="text-white fw-bold fs-4">Asunto</label>
+                <input type="text" class="form-control bg-dark text-white" id="asunto" name="asunto"
+                    formControlName="asunto"
+                    placeholder="Ingresa el asunto">
+            </div>
+
+            <div class="my-2 w-50"> 
+                <label for="mensaje" class="text-white fw-bold fs-4">Mensaje</label>
+                <textarea class="bg-dark form-control text-white" name="mensaje" id="mensaje" rows="5" formControlName="mensaje"></textarea>
+            </div>
+
+            <button class="btn btn-lg btn-dark mt-3" type="submit">Enviar Correo</button>
+        </div>
+        <div id="alert" role="alert"></div>
+    </form>
+</div>

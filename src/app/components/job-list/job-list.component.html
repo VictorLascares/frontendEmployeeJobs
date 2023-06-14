@@ -1,0 +1,30 @@
+<div class="container-lg mt-5">
+    <section>
+        <h2 class="text-center">Lista de Trabajos</h2>
+        <div class="d-flex justify-content-end my-3">
+            <a class="btn btn-dark" routerLink="add-job">Agregar Trabajo</a>
+        </div>
+
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>SALARIO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of jobsArray">
+                    <td>{{job.id}}</td>
+                    <td>{{job.name}}</td>
+                    <td>${{job.salary}}.00 MXN</td>
+                    <td>
+                        <a class="btn btn-warning me-2" (click)="Edit(job)">Editar</a>
+                        <a class="btn btn-danger" (click)="Delete(job)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

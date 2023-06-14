@@ -1,0 +1,46 @@
+<div class="container-lg mt-5">
+    <section id="form-employees" class="col">
+        <h2 class="text-center" id="title-form">Agregar Empleado</h2>
+        <div class="bg-dark rounded p-3 text-white">
+            <form id="formulario" (ngSubmit)="saveEmployee()">
+                <div class="form-group my-3">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="employee.name"
+                        placeholder="Ingresa el nombre del empleado">
+                </div>
+
+                <div class="form-group my-3">
+                    <label for="last_name">Apellido</label>
+                    <input type="text" class="form-control" id="last_name" name="salary"
+                        [(ngModel)]="employee.last_name" placeholder="Ingresa el apellido del empleado">
+                </div>
+
+                <div class="form-group my-3">
+                    <label for="birthdate">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="birthdate" name="birthdate"
+                        [(ngModel)]="employee.birthdate" placeholder="Ingresa el apellido del empleado">
+                </div>
+
+                <div class="form-group my-3">
+                    <label for="gender">Genero</label>
+                    <select class="form-control" id="gender" name="gender" [(ngModel)]="employee.gender">
+                        <option selected disabled value="undefined">-- Genero del Empleado --</option>
+                        <option *ngFor="let gender of gendersArray" [value]="gender.id">{{gender.name}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group my-3">
+                    <label for="job">Job</label>
+                    <select class="form-control" id="job" name="job" [(ngModel)]="employee.job">
+                        <option selected disabled value="undefined">-- Trabajo del Empleado --</option>
+                        <option *ngFor="let job of jobsArray" [value]="job.id">{{job.name}}</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="submit" id="btn-form" class="btn btn-secondary">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

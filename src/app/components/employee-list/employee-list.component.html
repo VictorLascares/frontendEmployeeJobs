@@ -1,0 +1,36 @@
+<div class="container-lg mt-5">
+    <section>
+        <h2 class="text-center">Lista de Empleados</h2>
+        <div class="d-flex justify-content-end my-3">
+            <a class="btn btn-dark" routerLink="add-employee">Agregar Empleado</a>
+        </div>
+
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>F NACIMIENTO</th>
+                    <th>GENERO</th>
+                    <th>TRABAJO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeesArray">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.last_name}}</td>
+                    <td>{{employee.birthdate}}</td>
+                    <td>{{employee.gender.name}}</td>
+                    <td>{{employee.job.name}}</td>
+                    <td>
+                        <a class="btn btn-warning me-2" (click)="Edit(employee)">Editar</a>
+                        <a class="btn btn-danger" (click)="Delete(employee)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
